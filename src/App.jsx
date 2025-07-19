@@ -10,8 +10,9 @@ function App() {
   useEffect(() => {
     (async () => {
       const { blogs } = await fetchBlogs();
-      context.setBlogList(blogs);
+      context.setBloglist(blogs);
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
