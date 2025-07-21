@@ -2,10 +2,9 @@ import "./App.css";
 import { useFetchBlog } from "./hooks/useFetchBlog";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home";
-import CreatePostForm from "./pages/NewPost";
+import CreatePostForm from "./pages/CreatePostForm";
 
-//TODO : create link to createPost page from header button
-
+// TODO: detailed post page.
 
 function App() {
   useFetchBlog();

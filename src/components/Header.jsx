@@ -1,5 +1,6 @@
 import React, { use, useRef } from "react";
 import { BlogContext } from "../context/BlogContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   // Get input value of the searchbar from the ref
@@ -56,9 +57,11 @@ const Header = () => {
             Search
           </button>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-white transition duration-200">
-          Create Post
-        </button>
+        <Link to="/createpost">
+          <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-white transition duration-200">
+            Create Post
+          </button>
+        </Link>
       </div>
     </header>
   );
