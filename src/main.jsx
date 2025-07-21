@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App.jsx";
 import { BlogContextProvider } from "./context/BlogContext.jsx";
 
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BlogContextProvider>
-      <App />
-    </BlogContextProvider>
+      <BlogContextProvider>
+        <App />
+      </BlogContextProvider>
   </StrictMode>
 );

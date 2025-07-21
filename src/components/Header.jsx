@@ -37,7 +37,7 @@ const Header = () => {
           <button
             onClick={searchHandler}
             type="button"
-            class="items-center gap-2.5 bg-white hover:bg-cyan-500/10 px-4 py-2 border border-gray-500/30 hover:border-cyan-500/30 rounded text-gray-800 hover:text-cyan-500 text-sm active:scale-95 transition"
+            className="items-center gap-2.5 bg-white hover:bg-cyan-500/10 px-4 py-2 border border-gray-500/30 hover:border-cyan-500/30 rounded text-gray-800 hover:text-cyan-500 text-sm active:scale-95 transition"
           >
             <svg
               className="top-1/2 left-3 absolute w-5 h-5 text-gray-500 -translate-y-1/2 transform"
