@@ -2,16 +2,24 @@ import React, { use, useRef } from "react";
 import { BlogContext } from "../context/BlogContext";
 
 const Header = () => {
+  // Get input value of the searchbar from the ref
   const blogSearchRef = useRef(null);
+
+  // Getting the context from the blogPost context
   const context = use(BlogContext);
 
+  //When user clicks on "search button" this fn will fire.
   function searchHandler() {
     // value from the input field
     const searchValue = blogSearchRef.current.value;
+
+    // Returing the an array of filtered posts
     const filteredList = context.bloglist.filter((blogPost) =>
       blogPost.title.toLowerCase().includes(searchValue.toLowerCase())
     );
 
+    // Setting the filtered list to the context
+    // for updating the bloglist through context.
     context.setFilterBlogList(filteredList);
   }
 

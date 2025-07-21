@@ -4,11 +4,10 @@ import { BlogContext } from "../../context/BlogContext";
 
 const BlogList = () => {
   const context = use(BlogContext);
-
   return (
     <div className="mx-auto px-4 py-8 container">
       <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {context.filteredBlogList.length >= 1 ? (
+        { context.filteredBlogList && context.filteredBlogList.length >= 1 ? (
           context.filteredBlogList.map((blog) => (
             <BlogCard
               key={blog.id}

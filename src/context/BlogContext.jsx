@@ -4,15 +4,23 @@ import { fetchBlogs } from "../api/fetchBlogs";
 const BlogContext = createContext(null);
 
 function BlogContextProvider({ children }) {
-  const [bloglist, setBloglist] = useState([]);
-  const [filteredBlogList, setFilterBlogList] = useState([]);
+  const [bloglist, setBloglist] = useState(null);
+  const [filteredBlogList, setFilterBlogList] = useState(null);
 
   useEffect(() => {
     (async () => {
+      // Fetching all the blogs from the api
       const { blogs } = await fetchBlogs();
+
+      // This bloglist will be stay constant after the first fetch.
+      // Used for searchPost Feature
       setBloglist(blogs);
-      setFilterBlogList(blogs)
+
+      // This will be the filtered list after the user search for a post through header.
+      setFilterBlogList(blogs);
     })();
+
+    // There is not dependance and effect will run only one time at initailzation
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

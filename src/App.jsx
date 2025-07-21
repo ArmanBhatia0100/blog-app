@@ -1,24 +1,20 @@
-import { useEffect, use } from "react";
+import { use } from "react";
 import "./App.css";
 import BlogList from "./components/blog/BlogList";
 import Header from "./components/Header";
-import { fetchBlogs } from "./api/fetchBlogs";
+import { useFetchBlog } from "./hooks/useFetchBlog";
 import { BlogContext } from "./context/BlogContext";
 
 function App() {
-  const context = use(BlogContext);
-  useEffect(() => {
-    (async () => {
-      const { blogs } = await fetchBlogs();
-      context.setBloglist(blogs);
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const constext = use(BlogContext);
+  useFetchBlog();
   return (
     <>
       <div>
         <Header></Header>
-        <BlogList />
+
+        {/* Loading state if the list is null */}
+        {!constext.filteredBlogList ? <h1>Loading</h1> : <BlogList />}
       </div>
     </>
   );
