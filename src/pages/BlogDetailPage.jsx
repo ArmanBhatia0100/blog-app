@@ -20,7 +20,6 @@ const BlogPostDetail = () => {
 
       <div className="bg-white shadow-lg p-6 rounded-2xl">
         <h1 className="mb-4 font-extrabold text-gray-900 text-4xl leading-tight">
-          Blog Post Title Goes Here
           {blog.title}
         </h1>
         <p className="mb-6 text-gray-500 text-sm">By John Doe</p>
@@ -34,7 +33,9 @@ const BlogPostDetail = () => {
         </div>
 
         <div className="max-w-none text-gray-800 prose prose-lg">
-          {parse(blog.content_html)}
+          {BlogPostDetail.content_html
+            ? parse(blog.content_html)
+            : blog.content_text}
         </div>
       </div>
     </div>
