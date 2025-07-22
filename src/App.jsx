@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="createPost" element={<CreatePostForm />}></Route>
-            <Route path="blog/detail" element={<BlogPostDetail />}></Route>
+            <Route path="blogs/:blogid" element={<BlogPostDetail />}></Route>
           </Routes>
         </BrowserRouter>
       </div>
