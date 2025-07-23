@@ -9,7 +9,6 @@ const BlogList = () => {
   return (
     <div className="mx-auto px-4 py-8 container">
       <div className="m-auto my-4 w-fit text-center">
-
         {/* Headings */}
         <h1>Discover Our Latest News</h1>
         <p>
@@ -19,8 +18,15 @@ const BlogList = () => {
       </div>
 
       {/* Searchbar and button */}
-      <div className="m-auto my-4 w-fit text-center">
+      <div className="m-auto my-4 mb-8 w-fit text-center">
         <SearchBar />
+      </div>
+
+      <div className="flex flex-row justify-center items-center mb-6">
+        <h4 className="mr-5 font-semibold text-gray-700 text-2xl text-nowrap">
+          Remarkable Boards
+        </h4>
+        <div className="border-t-2 w-full" />
       </div>
 
       {/* Blog List */}
