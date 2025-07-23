@@ -9,6 +9,39 @@ const BlogPostDetail = () => {
   const { blogID } = useParams();
   const blog = searchBlogFromParam(blogID, context.filteredBlogList);
 
+  function splitIntoHeading(text) {
+    // split the sentances
+    const sentences = text.split(".");
+
+    // get the first sentance
+    const HeadingSentance = sentences[0].trim();
+
+    // Combine the rest as paragraph
+    const paragraph = sentences.slice(1).join(".").trim().split(".");
+    console.log(paragraph);
+    // Create an Array
+
+    for (let i = 0; i < paragraph.length; i++) {
+
+      // if totol lines are even 
+        if (i % 18 == 0) {
+          paragraph.splice(
+            i,
+            0,
+            <div>
+              <br></br>
+              <br></br>
+            </div>
+          );
+        }
+
+      
+    }
+
+    return [HeadingSentance, paragraph];
+  }
+  const [HeadingSentance, paragraph] = splitIntoHeading(blog.content_text);
+
   return (
     <div className="mx-auto px-4 py-8 max-w-4xl">
       <button
@@ -33,9 +66,14 @@ const BlogPostDetail = () => {
         </div>
 
         <div className="max-w-none text-gray-800 prose prose-lg">
-          {BlogPostDetail.content_html
-            ? parse(blog.content_html)
-            : blog.content_text}
+          {BlogPostDetail.content_html ? (
+            parse(blog.content_html)
+          ) : (
+            <div>
+              <h2>{HeadingSentance}</h2>
+              <p>{paragraph}</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
