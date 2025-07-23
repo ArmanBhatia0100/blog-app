@@ -11,7 +11,7 @@ function App() {
   useFetchBlog();
   return (
     <>
-      <div>
+      <div className="bg-slate-50">
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />}></Route>

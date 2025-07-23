@@ -30,7 +30,7 @@ export default function SearchBar() {
           ref={blogSearchRef}
           type="text"
           placeholder="Search posts..."
-          className="mr-4 py-2 pr-4 pl-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 w-96"
+          className="mr-4 py-2 pr-4 pl-10 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 w-56 md:w-72 lg:w-96"
         />
         <button
           onClick={searchHandler}

@@ -2,6 +2,7 @@ import React, { use, useRef } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { BlogContext } from "../context/BlogContext";
+import Header from "../components/Header";
 
 /**
  *
@@ -48,17 +49,20 @@ export default function CreatePostForm() {
 
   return (
     <div>
-      <div>
-        <Link to="/" className="bg-red-500 p-2 border-2">
-          Back to home
+      <Header></Header>
+
+      {/* back button */}
+      <div className="flex flex-col justify-center items-center bg-slate-50 mt-8 h-screen">
+        <Link to="/" className="self-start shadow-sm ml-6 p-2 border-gray-400 rounded-md text-gray-900">
+          &larr; Back To Blogs
         </Link>
-      </div>
-      <div className="flex justify-center items-center bg-slate-800 h-screen">
+
+      {/* Input form */}
         <div className="space-y-4 bg-white shadow-md mx-auto p-6 rounded-2xl min-w-[60vw] max-w-xl">
           <h2 className="mb-4 font-bold text-gray-800 text-2xl">
             Create New Post
           </h2>
-          <form onSubmit={submitHandler}>
+          <form onSubmit={submitHandler} className="flex flex-col gap-3">
             <div>
               <label className="block mb-1 font-medium text-gray-700 text-sm">
                 Title

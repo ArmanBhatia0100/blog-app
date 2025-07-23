@@ -1,5 +1,5 @@
 import BlogList from "../components/blog/BlogList";
-import  Header  from "../components/Header";
+import Header from "../components/Header";
 import { use } from "react";
 import { BlogContext } from "../context/BlogContext";
 
@@ -7,7 +7,9 @@ export default function Home() {
   const constext = use(BlogContext);
   return (
     <>
-      <Header></Header>
+      <Header>
+        <Header.CreateButton></Header.CreateButton>
+      </Header>
 
       {/* Loading state if the list is null */}
       {!constext.filteredBlogList ? (
