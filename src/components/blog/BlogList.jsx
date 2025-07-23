@@ -11,7 +11,7 @@ const BlogList = () => {
       <div className="m-auto my-4 w-fit text-center">
         {/* Headings */}
         <h1>Discover Our Latest News</h1>
-        <p>
+        <p className="text-gray-600">
           Stay updated with our latest insights, stories, and innovations.
           Explore how we’re shaping the future with every new milestone.
         </p>
@@ -22,6 +22,7 @@ const BlogList = () => {
         <SearchBar />
       </div>
 
+      {/* Seperator line and text */}
       <div className="flex flex-row justify-center items-center mb-6">
         <h4 className="mr-5 font-semibold text-gray-700 text-2xl text-nowrap">
           Remarkable Boards
@@ -30,7 +31,7 @@ const BlogList = () => {
       </div>
 
       {/* Blog List */}
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {context.filteredBlogList && context.filteredBlogList.length >= 1 ? (
           context.filteredBlogList.map((blog) => (
             <Link to={`blogs/${blog.id}`}>

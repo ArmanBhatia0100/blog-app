@@ -1,17 +1,27 @@
+import { useEffect, useState } from "react";
 import React from "react";
 
-// BlogCard component for individual blog cards
-const BlogCard = ({ image, title, description }) => {
-  return (
-    <div className="bg-white shadow-md mx-auto mb-6 p-6 rounded-lg w-96">
-      <h2 className="mb-2 font-bold text-blue-600 text-xl">{title}</h2>
-      <img
-        src={image}
-        alt={title}
-        className="mb-4 rounded-md w-full h-48 object-cover"
-      />
+const BlogCard = ({title, description }) => {
+  
+  // This is generate a random color for the background 
+  const [randomColor, setRandomColor] = useState("FFF");
+  useEffect(function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    setRandomColor(color);
+  }, []);
 
-      <p className="text-gray-600 line-clamp-3">{description}</p>
+
+  return (
+    <div
+      className={`bg-white shadow-lg mx-auto mb-6 p-6 px-18 bg-origin-padding rounded-lg w-72 h-96 bg-center bg-cover bg-no-repeat`}
+      style={{ background: randomColor }}
+    >
+      <h2 className="mb-2 font-bold text-slate-100 text-2xl">{title}</h2>
+      <p className="font-medium text-slate-200 line-clamp-3">{description}</p>
     </div>
   );
 };
