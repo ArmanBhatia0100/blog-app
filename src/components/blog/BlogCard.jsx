@@ -17,7 +17,7 @@ const BlogCard = ({title, description }) => {
 
   return (
     <div
-      className={`bg-white shadow-lg mx-auto mb-6 p-6 px-18 bg-origin-padding rounded-lg w-72 h-96 bg-center bg-cover bg-no-repeat`}
+      className={`bg-white shadow-lg mx-auto mb-6 p-6 px-18 bg-origin-padding rounded-lg md:w-56 lg:w-72 h-96 bg-center bg-cover bg-no-repeat`}
       style={{ background: randomColor }}
     >
       <h2 className="mb-2 font-bold text-slate-100 text-2xl">{title}</h2>
